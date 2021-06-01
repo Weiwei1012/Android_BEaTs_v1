@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BEATS" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#0738CC</item>
+        <item name="colorPrimaryDark">#DD1010</item>
+        <item name="colorAccent">@color/teal_200</item>
+    </style>
+</resources>

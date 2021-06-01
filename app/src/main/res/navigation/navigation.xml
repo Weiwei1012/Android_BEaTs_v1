@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.weiwei.beats.HomePageFragment"
+        android:label="BEaTs"
+        tools:layout = "@layout/fragment_home_page">
+        <action
+            android:id="@+id/action_homePageFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.weiwei.beats.DetailsFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="rawId"
+            app:argType="long" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailsFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.weiwei.beats.AddFragment"
+        android:label="Add a new restaurant"
+        tools:layout="@layout/fragment_add">
+        <argument
+            android:name="rawId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.weiwei.beats.AboutFragment"
+        android:label="About BEaTs"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_aboutWebFragment"
+            app:destination="@id/aboutWebFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutWebFragment"
+        android:name="com.weiwei.beats.AboutWebFragment"
+        android:label="{selected_name}"
+        tools:layout="@layout/fragment_about_web" >
+        <argument
+            android:name="selected_name"
+            app:argType="string" />
+        <argument
+            android:name="selected_web"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.weiwei.beats.WeatherFragment"
+        android:label="Weather"
+        tools:layout="@layout/fragment_weather" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.weiwei.beats.MapsFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_maps">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="address"
+            app:argType="string" />
+    </fragment>
+</navigation>

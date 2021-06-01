@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="scene"
+            type="com.weiwei.beats.database.Restaurant" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".DetailsFragment">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10sp"
+                app:cardElevation="30dp">
+
+                <ImageView
+                    android:id="@+id/image_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    app:setImage="@{scene}"
+                    tools:src="@drawable/restaurant2" />
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/map_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="100dp"
+                android:text="Show on the map" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/description_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@{scene.description}"
+                    android:textColor="#75000000"
+                    android:textSize="20sp"
+                    tools:text="aaaaa" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    android:layout_marginStart="15dp"
+                    android:elevation="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="#"
+                    android:textColor="#1976D2"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/city_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    android:elevation="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@{scene.city}"
+                    android:textColor="#1976D2"
+                    android:textSize="20sp"
+                    tools:text="板橋"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    android:elevation="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="美食"
+                    android:textColor="#1976D2"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>
