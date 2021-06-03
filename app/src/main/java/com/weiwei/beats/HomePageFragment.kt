@@ -48,7 +48,7 @@ class HomePageFragment : Fragment() {
         //binding.recyclerView.addItemDecoration(DividerItemDecoration(this.activity, DividerItemDecoration.VERTICAL))
 
         //setup swipe handler
-        val swipeHandler = ItemTouchHelper(SwipeHandler(adapter,0,(ItemTouchHelper.LEFT)))
+        val swipeHandler = ItemTouchHelper(SwipeHandler(adapter,0,(ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT)))
         swipeHandler.attachToRecyclerView(binding.recyclerViewHome)
 
         binding.viewModel = viewModel

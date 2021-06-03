@@ -83,8 +83,6 @@ class RestaurantAdapter(val view: Context, val viewModel: MyViewModel) : ListAda
         }
     }
 
-
-
 }
 
 ////for resolve app:setImage in the item_layout.xml
